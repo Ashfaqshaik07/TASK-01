@@ -1,52 +1,16 @@
-# TASK-01
- Implement cypher cipher
-def encrypt(text, shift):
-    encrypted_text = ""
-    for char in text:
-        if char.isalpha():
-            shifted = ord(char) + shift
-            if char.islower():
-                if shifted > ord('z'):
-                    shifted -= 26
-            elif char.isupper():
-                if shifted > ord('Z'):
-                    shifted -= 26
-            encrypted_text += chr(shifted)
-        else:
-            encrypted_text += char
-    return encrypted_text
-def decrypt(encrypted_text, shift):
-    decrypted_text = ""
-    for char in encrypted_text:
-        if char.isalpha():
-            shifted = ord(char) - shift
-            if char.islower():
-                if shifted < ord('a'):
-                    shifted += 26
-            elif char.isupper():
-                if shifted < ord('A'):
-                    shifted += 26
-            decrypted_text += chr(shifted)
-        else:
-            decrypted_text += char
-    return decrypted_text
-def main():
-    while True:
-        choice = input("Do you want to encrypt or decrypt a message? (encrypt/decrypt): ").lower()
-        if choice not in ['encrypt', 'decrypt']:
-            print("Please enter a valid choice (encrypt/decrypt)")
-            continue
-        text = input("Enter the message: ")
-        shift = int(input("Enter the shift value: "))
-        if choice == 'encrypt':
-            encrypted_text = encrypt(text, shift)
-            print("Encrypted message:", encrypted_text)
-        else:
-            decrypted_text = decrypt(text, shift)
-            print("Decrypted message:", decrypted_text)
-        another = input("Do you want to perform another operation? (yes/no): ").lower()
-        if another != 'yes':
-            print("Goodbye!")
-            break
-if _name_ == "_main_":
-    main()
+# PRODIGY_CS_01 - Caesar Cipher Encryption and Decryption
+This repository contains a Python program that implements the Caesar Cipher algorithm for encrypting and decrypting text. Users can input a message and a shift value to perform either encryption or decryption. This project demonstrates fundamental cryptography concepts and is part of Cyber Security Task 01 for the Prodigy InfoTech Internship.
+
+The Caesar Cipher is a classic encryption technique where each letter in the plaintext is shifted by a fixed number of positions either up or down the alphabet. The program provides an interactive interface that allows users to input a message and a shift value to perform encryption or decryption based on their needs.
+
+---
+### Key Features:
+- *Encryption*: Converts a plaintext message into ciphertext by shifting each letter.
+- *Decryption*: Reverses the encryption process to recover the original message.
+- *User Input*: The program accepts a message and a shift value as input, allowing flexible encryption and decryption operations.
+---
+### Encryption and Decryption Example:- The process of encrypting and decrypting a message.
+<div style="display: flex; justify-content: space-between;">
+    <img src="Encrypt.png" alt="Encryption Example" width="500" />
+    <img src="Decrypt.png" alt="Decryption Example" width="500" />
+</div>
